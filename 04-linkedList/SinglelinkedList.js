@@ -106,6 +106,22 @@ class LinkedList {
     let tailNode = deletingNode.next;
     leader.next = tailNode;
   }
+
+  reverse() {
+    let firstItem = this.head;
+    this.tail = this.head;
+    let secondItem = firstItem.next;
+
+    while (secondItem) {
+      const temp = secondItem.next;
+      secondItem.next = firstItem;
+      firstItem = secondItem;
+      secondItem = temp;
+    }
+    this.head.next = null;
+    this.head = firstItem;
+    return this.printList();
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -119,4 +135,4 @@ console.log(myLinkedList.printList());
 myLinkedList.remove(2);
 
 console.log(myLinkedList.printList());
-console.log(myLinkedList);
+console.log(myLinkedList.reverse());
