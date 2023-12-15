@@ -57,7 +57,7 @@ class BinarySearchTree {
 
   //remove
   remove(value){
-    //Need to code and understand it
+    //Need to code and understand it 
   }
 }
 
